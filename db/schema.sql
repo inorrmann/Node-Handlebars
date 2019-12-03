@@ -1,0 +1,12 @@
+DROP DATABASE IF EXISTS todolistDB;
+CREATE DATABASE todolistDB;
+
+USE todolistDB;
+
+CREATE TABLE todos (
+    id INT(10) AUTO_INCREMENT NOT NULL,
+    task VARCHAR(250) NOT NULL,
+    done BOOLEAN NOT NULL,
+    PRIMARY KEY (id)
+);
+ 
