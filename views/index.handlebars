@@ -5,18 +5,18 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h3 class="text-center mb-4">Items to Complete </h3>
+            <h3 class="text-center mb-4">Tasks to Complete </h3>
             <hr>
 
-            {{#each}}
+            {{#each todosIncomplete}}
             <div class="row mb-3">
                 <div class="col-9">
-                    <p class="d-inline">{{id}}</p>
+                    <p class="d-inline">{{this.id}} .</p>
                     <span>&nbsp;</span>
-                    <p class="d-inline">{{name}}</p>
+                    <p class="d-inline">{{this.task}}</p>
                 </div>
                 <div class="col-3">
-                        <button type="submit" class="rounded bg-light"><i class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
+                        <button data-todoid="{{this.id}}" id="doneTodo" type="submit" class="rounded bg-light"><i class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
                 </div>
             </div>
             {{/each}}
@@ -24,15 +24,15 @@
         </div>
 
         <div class="col-6">
-            <h3 class="text-center mb-4">Items Completed </h3>
+            <h3 class="text-center mb-4">Completed Tasks</h3>
             <hr>
 
-            {{#each}}
+            {{#each todosComplete}}
             <div class="row mb-4">
                 <div class="col-12">
                     <p class="d-inline">{{id}}</p>
                     <span>&nbsp;</span>
-                    <p class="d-inline">{{name}}</p>
+                    <p class="d-inline">{{task}}</p>
                 </div>
             </div>
             {{/each}}
@@ -42,18 +42,20 @@
 
     <footer class="footer">
         <div class="col-12">
-            <form id="createBurger" class="mx-auto">
+            <form id="createTodo" class="mx-auto">
                 <hr>
                 <div class="form-group mx-auto">
-                    <label class="text-center mb-0">Enter a burger you would like to eat</label>
-                    <input type="text" class="form-control form-control-lg" name="burger"></input>
+                    <label class="text-center mb-0">Enter a task that needs to be completed</label>
+                    <input type="text" class="form-control form-control-lg" name="todo"></input>
                 </div>
                 <div class="form-group mx-auto text-center">
 
-                    <button type="submit" class="btn btn-secondary ">Submit</button>
+                    <button type="submit" id="submit" class="btn btn-secondary">Submit</button>
                 </div>
             </form>
         </div>
     </footer>
 
 </div>
+
+<script type="text/javascript" src="assets/js/script.js"></script>

@@ -1,8 +1,6 @@
 .jumbotron {
     background-color: black;
     background-size: 20%;
-    /* background-image: url(../todo.jpg); */
-    /* background-repeat: no-repeat; */
     border-radius: 0;
     color: rgb(163, 162, 162);
     font-family: 'Montserrat', sans-serif;
@@ -12,8 +10,6 @@
 body {
     background-color: rgb(235, 235, 235);
     font-family: 'Noto Sans JP', sans-serif;
-    /* background-image: url(../todo.jpg);
-    background-size: cover; */
 }
 
 body::after {
