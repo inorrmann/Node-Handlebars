@@ -1,4 +1,4 @@
-# Node-Handlebars
+# Task Manager
 
 [![npm version](https://badge.fury.io/js/express-handlebars.svg)](https://badge.fury.io/js/express-handlebars)
 [![npm version](https://badge.fury.io/js/express.svg)](https://badge.fury.io/js/express)
