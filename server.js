@@ -31,8 +31,10 @@ connection.connect(function (err) {
     console.log("connected as id " + connection.threadId);
 });
 
+// get saved tasks when page loads
 app.get("/", function (req, res) {
     connection.query("SELECT * FROM todos", function (err, data) {
+
         if (err) return res.status(500).end();
         let todosNotDone = [];
         let todosDone = [];
@@ -40,7 +42,7 @@ app.get("/", function (req, res) {
             if (data[i].done === 0) {
                 todosNotDone.push(data[i]);
             }
-            else {
+            else if (data[i].done === 1) {
                 todosDone.push(data[i]);
             }
         }
@@ -48,6 +50,26 @@ app.get("/", function (req, res) {
     });
 });
 
+// route to determine completeness of tasks that will
+// allow front-end to determine which header is needed
+app.get("/api/headers", function (req, res) {
+    connection.query("SELECT * FROM todos", function (err, data) {
+        if (err) return res.status(500).end();
+
+        let complete = data.filter((task) => {
+            return task.done === 1
+        })
+        let incomplete = data.filter((task) => {
+            return task.done === 0
+        })
+
+        res.json({ complete, incomplete })
+
+    });
+});
+
+
+// post tasks to server when Submit button is clicked
 app.post("/api/tasks", function (req, res) {
     console.log(req.body);
     connection.query("INSERT INTO todos (task, done) VALUES (?, false)", [req.body.todo], function (err, result) {
@@ -57,14 +79,30 @@ app.post("/api/tasks", function (req, res) {
     });
 });
 
-app.get("/api/tasks", function(req, res) {
-    connection.query("SELECT * FROM todos", function(err, data) {
+
+// get saved tasks and display on /api/tasks page
+app.get("/api/tasks", function (req, res) {
+    connection.query("SELECT * FROM todos", function (err, data) {
         if (err) return res.status(500).end();
         res.json(data);
     })
 })
 
 
+app.put("/api/tasks/:id", function (req, res) {
+    // check whether if it's todo or task
+    console.log(req.body);
+    connection.query("UPDATE todos SET done=true WHERE id=?", [req.params.id], function (err, response) {
+        if (err) throw err;
+        if (err) return res.status(500).end();
+        if (response.changedRows === 0) {
+            return res.status(404).end();
+        }
+        res.status(200).end();
+    })
+})
+
+// listen to the port
 app.listen(PORT, function () {
     console.log("App listening on http://localhost:" + PORT);
 })

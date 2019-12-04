@@ -1,15 +1,16 @@
 .jumbotron {
-    background-color: black;
+    background-color: rgb(118, 124, 125);
     background-size: 20%;
     border-radius: 0;
-    color: rgb(163, 162, 162);
+    color: rgb(190, 199, 202);
     font-family: 'Montserrat', sans-serif;
-
+    padding: 3rem 2rem;
 }
 
 body {
     background-color: rgb(235, 235, 235);
     font-family: 'Noto Sans JP', sans-serif;
+    color: #5a5757;
 }
 
 body::after {
@@ -26,5 +27,24 @@ body::after {
 }
 
 .form-group {
-    width: 50%;
+    width: 60%;
+}
+
+.border {
+    border-width: medium !important;
+    border-color: #aab5b9 !important;
+}
+
+::placeholder {
+    color: #757b7c !important;
+}
+
+#doneTodo {
+    color: #5a5757;
+}
+
+#submit {
+    border-color: #757b7c !important;
+    background-color: #757b7c !important;
+    color: white;
 }

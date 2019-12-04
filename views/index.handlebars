@@ -5,18 +5,23 @@
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h3 class="text-center mb-4">Tasks to Complete </h3>
-            <hr>
+            <div class="incomplete">
+                <h3 class="text-center mb-4">Tasks to Complete </h3>
+                <hr>
+            </div>
 
             {{#each todosIncomplete}}
             <div class="row mb-3">
                 <div class="col-9">
                     <p class="d-inline">{{this.id}} .</p>
                     <span>&nbsp;</span>
-                    <p class="d-inline">{{this.task}}</p>
+                    <p class="d-inline" name="task">{{this.task}}</p>
                 </div>
                 <div class="col-3">
-                        <button data-todoid="{{this.id}}" id="doneTodo" type="submit" class="rounded bg-light"><i class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
+                    <form id="{{this.id}}" class="doneTodo">
+                        <button data-todoid="{{this.id}}" type="submit" class="rounded bg-light"><i
+                                class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
+                    </form>
                 </div>
             </div>
             {{/each}}
@@ -24,8 +29,10 @@
         </div>
 
         <div class="col-6">
-            <h3 class="text-center mb-4">Completed Tasks</h3>
-            <hr>
+            <div class="complete">
+                <h3 class="text-center mb-4">Completed Tasks</h3>
+                <hr>
+            </div>
 
             {{#each todosComplete}}
             <div class="row mb-4">
@@ -44,13 +51,14 @@
         <div class="col-12">
             <form id="createTodo" class="mx-auto">
                 <hr>
-                <div class="form-group mx-auto">
-                    <label class="text-center mb-0">Enter a task that needs to be completed</label>
-                    <input type="text" class="form-control form-control-lg" name="todo"></input>
+                <div class="form-group mx-auto pt-4">
+                    {{!-- <label class="text-center mb-0">Enter a task that needs to be completed</label> --}}
+                    <input type="text" class="form-control form-control-lg border rounded" name="todo"
+                        placeholder="Enter a task that needs to be completed"></input>
                 </div>
                 <div class="form-group mx-auto text-center">
 
-                    <button type="submit" id="submit" class="btn btn-secondary">Submit</button>
+                    <button type="submit" id="submit" class="btn">Submit</button>
                 </div>
             </form>
         </div>
