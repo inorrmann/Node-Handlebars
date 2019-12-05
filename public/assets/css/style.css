@@ -26,9 +26,11 @@ body::after {
     z-index: -1;
 }
 
-.form-group {
-    width: 60%;
+
+.input-group {
+    width: 75%;
 }
+
 
 .border {
     border-width: medium !important;
@@ -37,14 +39,23 @@ body::after {
 
 ::placeholder {
     color: #757b7c !important;
+    font-size: 18px;
 }
 
 #doneTodo {
     color: #5a5757;
 }
 
-#submit {
-    border-color: #757b7c !important;
+#submit, #deleteAll {
     background-color: #757b7c !important;
     color: white;
+    font-size: 18px;
+}
+
+#submit:hover {
+    background-color: #547454 !important;
+}
+
+#deleteAll:hover {
+    background-color: #c74848 !important;
 }

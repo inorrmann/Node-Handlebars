@@ -16,6 +16,7 @@ submitBtn.addEventListener("submit", function (event) {
     )
 })
 
+
 // determine whether header is off or on based on content of task array
 const header = () => {
     $.ajax("/api/headers", {
@@ -40,10 +41,10 @@ const header = () => {
 header();
 
 
+// Done! button updates status of tasks
 let done = document.querySelectorAll(".doneTodo");
-
 for (i = 0; i < done.length; i++) {
-    // loop through all the Done! buttons and create an event listener
+    // loop through all Done! buttons and create an event listener
     done[i].addEventListener("click", function (event) {
         event.preventDefault();
         // get the id of the button that triggered the click
@@ -58,3 +59,17 @@ for (i = 0; i < done.length; i++) {
         )
     })
 }
+
+
+const deleteBtn = document.querySelector("#delete");
+deleteBtn.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    $.ajax("/api/tasks", {
+        type: "DELETE"
+    }).then(
+        function() {
+            location.reload();
+        }
+    )
+});

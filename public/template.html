@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task Manager</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/55233fae23.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+
+<body>
+    <div class="jumbotron sticky-top text-center">
+        <h1 class="display-3 font-weight-bold">Task Manager</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="text-center mb-4">Items to Complete</h3>
+                <hr>
+
+                <div class="row mb-3">
+                    <div class="col-9">
+                        <p class="d-inline">#</p>
+                        <span>&nbsp;</span>
+                        <p class="d-inline">Item to do will go here</p>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="rounded bg-light"><i
+                                class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-9">
+                        <p class="d-inline">#</p>
+                        <span>&nbsp;</span>
+                        <p class="d-inline">Task that needs to be done</p>
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" class="rounded bg-light"><i
+                                class="far fa-check-circle"></i></i><span>&nbsp;</span> Done!</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-6">
+                <h3 class="text-center mb-4">Tasks Completed </h3>
+                <hr>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <p class="d-inline">#</p>
+                        <span>&nbsp;</span>
+                        <p class="d-inline">Task that has been done will go here</p>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <p class="d-inline">#</p>
+                        <span>&nbsp;</span>
+                        <p class="d-inline">Completed item will go here</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <hr>
+            <form id="createTodo">
+                <div class="input-group mx-auto border rounded">
+                    <input type="text" class="form-control form-control-lg border-0 rounded-0" name="todo"
+                        placeholder="Enter a task that needs to be completed"></input>
+                    <div class="input-group-append">
+                        <button type="submit" id="submit" class="px-4 border-0">Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                <form id="delete" class="mx-auto mt-4">
+                    <button type="submit" id="deleteAll" class="px-4 py-2 rounded">Clear all tasks</button>
+                </form>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -48,18 +48,19 @@
     </div>
 
     <footer class="footer">
-        <div class="col-12">
-            <form id="createTodo" class="mx-auto">
-                <hr>
-                <div class="form-group mx-auto pt-4">
-                    {{!-- <label class="text-center mb-0">Enter a task that needs to be completed</label> --}}
-                    <input type="text" class="form-control form-control-lg border rounded" name="todo"
-                        placeholder="Enter a task that needs to be completed"></input>
+        <hr>
+        <form id="createTodo">
+            <div class="input-group mx-auto border rounded">
+                <input type="text" class="form-control form-control-lg border-0 rounded-0" name="todo"
+                    placeholder="Enter a task that needs to be completed"></input>
+                <div class="input-group-append">
+                    <button type="submit" id="submit" class="px-4 border-0">Submit</button>
                 </div>
-                <div class="form-group mx-auto text-center">
-
-                    <button type="submit" id="submit" class="btn">Submit</button>
-                </div>
+            </div>
+        </form>
+        <div class="row">
+            <form id="delete" class="mx-auto mt-4">
+                <button type="submit" id="deleteAll" class="px-4 py-2 rounded">Clear all tasks</button>
             </form>
         </div>
     </footer>
