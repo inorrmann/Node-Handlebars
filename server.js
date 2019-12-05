@@ -17,10 +17,10 @@ app.set("view engine", "handlebars");
 
 
 
-// if (process.env.JAWSDB_URL) {
-//     var connection = mysql.createConnection(process.env.JAWSDB_URL);
-// }
-// else {
+if (process.env.JAWSDB_URL) {
+    var connection = mysql.createConnection(process.env.JAWSDB_URL);
+}
+else {
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -28,13 +28,13 @@ var connection = mysql.createConnection({
     password: process.env.pw,
     database: "todolistDB"
 });
-// }
+}
 
-// connection.query("SHOW TABLES", function(err,results){
-//     if (results.length === 0) {
-//       connection.query("CREATE TABLE todos (id INT(10) AUTO_INCREMENT NOT NULL, task VARCHAR(250) NOT NULL, done BOOLEAN NOT NULL, PRIMARY KEY (id));")
-//     };
-//   })
+connection.query("SHOW TABLES", function(err,results){
+    if (results.length === 0) {
+      connection.query("CREATE TABLE todos (id INT(10) AUTO_INCREMENT NOT NULL, task VARCHAR(250) NOT NULL, done BOOLEAN NOT NULL, PRIMARY KEY (id));")
+    };
+  })
 
 
 connection.connect(function (err) {
