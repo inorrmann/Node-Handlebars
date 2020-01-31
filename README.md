@@ -7,7 +7,7 @@
 
 Deployed Site: https://task-manager-page.herokuapp.com/
 
-This task managers allows users to enter todos and mark them as completed when done. All tasks will be kept in the server and displayed as either completed or not until user clears all tasks.
+This task manager allows users to enter todos and mark them as completed when done. All tasks will be kept in the server and displayed as either completed or not until user clears all tasks.
 
 ![screenshot](./screenshot.png)
 
